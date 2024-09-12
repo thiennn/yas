@@ -23,3 +23,5 @@ jobs:
       with:
         scan-type: 'fs'
         scan-ref: './backoffice-bff'
+        format: 'sarif'
+        output: 'trivy-results.sarif'
