@@ -15,7 +15,7 @@ jobs:
       uses: aquasecurity/trivy-action@0.20.0
       with:
         scan-type: 'fs'
-        scan-ref: './backoffice'
+        scan-ref: '.'
         format: 'sarif'
         output: 'trivy-results.sarif'
         exit-code: '1'
