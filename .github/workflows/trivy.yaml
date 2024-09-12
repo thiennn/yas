@@ -19,7 +19,6 @@ jobs:
         scan-type: 'fs'
         scan-ref: './backoffice'
         format: 'table'
-        output: 'trivy-results.sarif'
         exit-code: '1'
         ignore-unfixed: true
         severity: 'CRITICAL,HIGH'
