@@ -13,6 +13,8 @@ jobs:
         fetch-depth: 0 # Shallow clones should be disabled for a better relevancy of analysis
     - run: npm install
       working-directory: backoffice
+    - run: npm audit
+      working-directory: backoffice
     - name: Run Trivy vulnerability scanner
       uses: aquasecurity/trivy-action@0.24.0
       with:
@@ -23,5 +25,3 @@ jobs:
       with:
         scan-type: 'fs'
         scan-ref: './backoffice-bff'
-        format: 'sarif'
-        output: 'trivy-results.sarif'
