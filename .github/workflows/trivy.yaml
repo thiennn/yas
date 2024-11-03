@@ -21,6 +21,7 @@ jobs:
       with:
         scan-type: 'fs'
         scan-ref: './backoffice'
+        format: 'cyclonedx'
         output: 'backoffice.sbom.json'
     - name: "Read sbom"
       run: cat backoffice.sbom.json
