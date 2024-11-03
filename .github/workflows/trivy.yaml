@@ -21,7 +21,9 @@ jobs:
       with:
         scan-type: 'fs'
         scan-ref: './backoffice'
-        output: 'backoffices.sbom.json'
+        output: 'backoffice.sbom.json'
+    - name: "Read sbom"
+      run: cat backoffice.sbom.json
     - name: Upload sbom to dependency track
       run: |
         curl -X "POST" "https://ntsca.azurewebsites.net/api/v1/bom" \
@@ -29,7 +31,7 @@ jobs:
          -H 'Content-Type: multipart/form-data' \
          -H 'X-API-Key: ${{ secrets.DEPENDENCYTRACK_TOKEN}}' \
          -F "project=066da5a1-8aa3-4064-8267-64938e8fb069" \
-         -F "bom=@backoffices.sbom.json"
+         -F "bom=@backoffice.sbom.json"
     - name: Run Trivy vulnerability scanner
       uses: aquasecurity/trivy-action@0.24.0
       with:
