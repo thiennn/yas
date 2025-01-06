@@ -31,5 +31,5 @@ jobs:
          -H 'accept: application/json' \
          -H 'Content-Type: multipart/form-data' \
          -H 'X-API-Key: ${{ secrets.DEPENDENCYTRACK_TOKEN}}' \
-         -F "project=066da5a1-8aa3-4064-8267-64938e8fb069" \
+         -F "project=063aeda5-cf11-4ee7-b509-efba5be4ad17" \
          -F "bom=@backoffice.sbom.json"
